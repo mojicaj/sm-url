@@ -2,7 +2,7 @@
 <html>
 
    <head>
-      <title>Backend Challenges | Free Code Camp</title>
+      <title>FCC Backend Challenges | Url Shortener</title>
       <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
       <link href="/public/style.css" rel="stylesheet" type="text/css">
@@ -10,8 +10,57 @@
 
    <body>
       <div class="container">
-         <h1>Manage Node.js projects and npm packages using package.json</h1>
-         <h3>Part 1 of Free Code Camp Backend Challenges</h3>
+         <h1>API Backend Challenge</h1>
+         <h3>URL Shortener</h3>
+        <div class="main">
+           
+          <blockquote>
+             <h4>
+               User stories:
+            </h4>
+            <ul>
+              1) I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+            </ul>
+            <ul>
+              2) If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead. 
+            </ul>
+            <ul>
+              3) When I visit that shortened URL, it will redirect me to my original link.
+            </ul>
+          </blockquote>
+          
+          
+          <h3>
+            Example creation usage:
+          </h3>
+        
+          <code>
+            https://sm-url.glitch.me/new/https://www.google.com
+          </code><br>
+          <code>
+            https://sm-url.glitch.me/new/https://medium.freecodecamp.org/
+          </code>
+          <br>
+        
+          <h3>
+            Example creation output:
+          </h3>
+        
+          <code>
+            { "original_url":"https://medium.freecodecamp.org/", "short_url":"https://sm-url.glitch.me/" }
+          </code>
+          
+          <h3>
+            Usage:
+          </h3>
+          <code>https://sm-url.glitch.me/</code>
+          
+          <h3>
+            Will redirect to:
+          </h3>
+          <code>https://medium.freecodecamp.org/</code>
+          
+       </div>
       </div>
    </body>
 

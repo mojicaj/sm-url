@@ -13,6 +13,12 @@ body {
 	margin-top: 40px;
 }
 
+.main {
+  width: 75%;
+  margin: auto;
+  text-align: left;
+}
+
 .footer {
 	margin-top: 60px;
 }
@@ -32,4 +38,16 @@ a {
 img {
 	margin: 20px auto 0 auto;
 	display: block;
+}
+
+blockquote {
+  border-left: 5px solid black;
+  padding: 5px 20px;
+  margin-left: 0;
+}
+
+code {
+  background: white;
+  color: #c92427;
+  font-size: .85em;
 }
