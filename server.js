@@ -9,6 +9,8 @@ const fs = require('fs');
 const express = require('express');
 const app = express();
 const short = require('./short.js');
+const getUrl = require('./getUrl');
+const urlExists = require('url-exists');
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -39,8 +41,29 @@ app.route('/')
 		  res.sendFile(process.cwd() + '/views/index.html');
     })
 
-app.get('/new/*', function(req, res){
-  res.type('json').send(short(req.params))
+app.get('/new/*', function(req, res) {
+  
+  urlExists(req.params[0], (err, valid)=>{
+  
+    if (valid) {
+      short(req.params).then((sUrl)=>{
+        res.type('json').send(sUrl);
+      });
+    } else {
+      res.type('txt').send('Not a valid URL');
+    }
+    
+  });
+  
+});
+
+app.get('/:id([0-9])', function(req, res) {
+  getUrl(req.params.id).then((origUrl)=>{
+    res.redirect(origUrl);
+  }).catch(()=>{
+    res.status(404);
+    res.type('txt').send('Not found');
+  });
 });
 
 // Respond not found to all the wrong routes

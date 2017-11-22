@@ -1,7 +1,10 @@
 {
   "name": "fcc-learn-npm-package-json",
+  "description": "Url Shortener",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "url-exists": "^1.0.3"
   },
   "main": "server.js",
   "scripts": {
@@ -13,5 +16,6 @@
   "repository": {
     "type": "git",
     "url": "https://idontknow/todo.git"
-  }
+  },
+  "license": "MIT"
 }
